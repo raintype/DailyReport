@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="DailyReport.Pages.Home"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d"  
+             d:DesignHeight="417.9" d:DesignWidth="620.667">
+    <Canvas HorizontalAlignment="Left" Height="722" Margin="1,-5,0,-343" VerticalAlignment="Top" Width="616" Grid.RowSpan="2" Grid.ColumnSpan="2" KeyDown="Canvas_KeyDown">
+        <mui:ModernButton x:Name="btnYesterday" Content="" IconData="F1 M 57,42L 57,34L 32.25,34L 42.25,24L 31.75,24L 17.75,38L 31.75,52L 42.25,52L 32.25,42L 57,42 Z " IsEnabled="True" Canvas.Left="379" Canvas.Top="3"  Click="btnYesterday_Click" />
+        <mui:ModernButton x:Name="btnTommorrow" Content="" IconData="F1 M 19.0002,34L 19.0002,42L 43.7502,42L 33.7502,52L 44.2502,52L 58.2502,38L 44.2502,24L 33.7502,24L 43.7502,34L 19.0002,34 Z " IsEnabled="True" Canvas.Left="588" Canvas.Top="3"  Click="btnTommorrow_Click" />
+        <DatePicker x:Name="datePicker" Canvas.Left="404" Width="179" SelectedDateChanged="datePicker_SelectedDateChanged"/>
+
+        <TextBlock Text="출근" Style="{StaticResource Emphasis}" Canvas.Left="11" Canvas.Top="35"/>
+        <TextBlock Text="퇴근" Style="{StaticResource Emphasis}" Canvas.Left="128" Canvas.Top="35"/>
+
+        <TextBlock Text="요약" Style="{StaticResource Emphasis}" Canvas.Left="11" Canvas.Top="65"/>
+        <TextBox x:Name="tbStartTime" Height="23" Canvas.Left="46" TextWrapping="Wrap" Canvas.Top="30" Width="55" MaxLength="5" Text="09:30" HorizontalContentAlignment="Center" RenderTransformOrigin="0.444,1" GotFocus="tbStartTime_GotFocus"/>
+        <TextBox x:Name="tbEndTime" Height="23" Canvas.Left="163" TextWrapping="Wrap" Canvas.Top="30" Width="55" MaxLength="5" Text="18:30" HorizontalContentAlignment="Center" GotFocus="tbEndTime_GotFocus"/>
+        <TextBox x:Name="tbSummary" Height="80" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="83.333" Width="594" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" UseLayoutRounding="False" KeyDown="tbSummary_KeyDown">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="tbDetail" Height="401" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="197" Width="594" AcceptsReturn="True" ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Auto" KeyDown="tbDetail_KeyDown">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBlock Text="작업내용" Style="{StaticResource Emphasis}" Canvas.Left="11" Canvas.Top="179"/>
+
+        <TextBlock x:Name="tbNotice" Text="* 자동 저장 되었습니다." Style="{StaticResource Emphasis}" Canvas.Left="481" Canvas.Top="179" Foreground="#FFFF0606" Width="123" Visibility="Hidden"/>
+
+        <mui:ModernButton x:Name="btnlately_Report" Content="Lately Reprot" IconData="F1 M 19,57L 34,57L 34,42L 28.8076,47.1924C 26.4551,44.8399 25,41.5899 25,38C 25,30.8203 30.8203,25 38,25C 45.1797,25 51,30.8203 51,38C 51,42.6137 48.5965,46.6661 44.9734,48.9734L 49.2862,53.2862C 53.9658,49.8254 57,44.2671 57,38C 57,27.5066 48.4934,19 38,19C 27.5066,19 19,27.5066 19,38C 19,43.2467 21.1266,47.9967 24.565,51.435L 19,57 Z " IsEnabled="True" Canvas.Left="11" Canvas.Top="615" RenderTransformOrigin="-3.497,14" Click="btnlately_Report_Click" />
+        <mui:ModernButton x:Name="btnSave" Content="Save" IconData="F1 M 20,20L 50.25,20L 56,25.75L 56,56L 20,56L 20,20 Z M 52,27.25L 48.75,24L 48,24L 48,37L 28,37L 28,24L 24,24L 24,52L 52,52L 52,27.25 Z M 39,24L 39,34L 44,34L 44,24L 39,24 Z " IsEnabled="True" Canvas.Left="459" Canvas.Top="615" RenderTransformOrigin="-3.497,14" Click="btnSave_Click" />
+        <mui:ModernButton x:Name="btnOpenOutlook" Content="Outlook" IconData="F1 M 57,28.0001L 57.0002,44.9999L 55.0002,44.9999L 55.0002,30L 42.0002,29.9999L 42.0002,28L 57,28.0001 Z M 54,49.0002L 42.0001,49L 42,38.0001L 45.5032,40.7501L 53.9998,33.5004L 54,49.0002 Z M 54,31.0001L 53.9998,31.7503L 45.4998,38.7503L 42.0001,36L 42.0002,31L 54,31.0001 Z M 18.9998,23.5002L 40.9999,20.0001L 40.9999,56.0001L 18.9998,52.5002L 18.9998,23.5002 Z M 29.7823,44.5427C 31.1047,44.6242 32.6081,44.0316 33.4484,43.0072C 35.2038,40.8676 35.3479,37.1917 34.085,34.729C 33.491,33.5706 32.2772,32.5478 30.9911,32.3455C 29.9414,32.1803 28.7908,32.3617 27.8419,32.8397C 25.3245,34.1079 24.2313,38.1775 25.1295,40.8493C 25.7605,42.7263 27.8059,44.421 29.7823,44.5427 Z M 29.87,34.5962C 32.1888,34.5309 33.0384,39.4058 31.7104,41.3077C 31.5008,41.6079 31.216,41.8734 30.8877,42.0353C 30.5612,42.1963 30.1792,42.2576 29.8155,42.2423C 29.4521,42.2269 29.0805,42.1272 28.7653,41.9457C 28.4352,41.7557 28.1522,41.4733 27.9357,41.16C 26.6387,39.2837 27.5899,34.6605 29.87,34.5962 Z " IsEnabled="True" Canvas.Left="528" Canvas.Top="615" RenderTransformOrigin="-3.497,14" Click="btnOpenOutlook_Click" />
+
+    </Canvas>
+</UserControl>

@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="DailyReport.Pages.Weekly"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="620">
+    <Canvas HorizontalAlignment="Left" Height="659" Margin="1,-5,0,-354" VerticalAlignment="Top" Width="616" Grid.RowSpan="2" Grid.ColumnSpan="2" KeyDown="Canvas_KeyDown">
+        <Border BorderBrush="{x:Null}" Height="20" Width="100" Canvas.Left="420" Canvas.Top="6">
+            <TextBlock x:Name="txtWeek" Text="1월 1주" FontSize="13" HorizontalAlignment="Center" RenderTransformOrigin="0.505,0.544"/>
+        </Border>
+        <mui:ModernButton x:Name="btnPreWeek" Content="" IconData="F1 M 57,42L 57,34L 32.25,34L 42.25,24L 31.75,24L 17.75,38L 31.75,52L 42.25,52L 32.25,42L 57,42 Z " IsEnabled="True" Canvas.Left="395" Canvas.Top="6"  Click="btnPreWeek_Click" />
+        <mui:ModernButton x:Name="btnNextWeek" Content="" IconData="F1 M 19.0002,34L 19.0002,42L 43.7502,42L 33.7502,52L 44.2502,52L 58.2502,38L 44.2502,24L 33.7502,24L 43.7502,34L 19.0002,34 Z " IsEnabled="True" Canvas.Left="525" Canvas.Top="6"  Click="btnNextWeek_Click" />
+
+
+        <TextBlock x:Name="txtThisWeek" Text="금주 업무 목표" Style="{StaticResource Emphasis}" Canvas.Left="11" Canvas.Top="34"/>
+        <TextBox x:Name="tbThisWeek" Height="75" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="54" Width="594" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" UseLayoutRounding="False">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+
+        <TextBlock x:Name="txtNew" Text="신규 발생/변경 업무" Style="{StaticResource Emphasis}" Canvas.Left="11" Canvas.Top="154"/>
+        <TextBox x:Name="tbNew" Height="75" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="174" Width="594" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" UseLayoutRounding="False">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <TextBlock x:Name="txtResult" Text="업무진행 성과" Style="{StaticResource Emphasis}" Canvas.Left="11" Canvas.Top="274"/>
+        <TextBox x:Name="tbResult" Height="75" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="294" Width="594" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" UseLayoutRounding="False">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <TextBlock x:Name="txtNextWeek" Text="다음주 업무 계획" Style="{StaticResource Emphasis}" Canvas.Left="11" Canvas.Top="394"/>
+        <TextBox x:Name="tbNextWeek" Height="75" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="414" Width="594" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" UseLayoutRounding="False">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <TextBlock x:Name="txtComment" Text="평가" Style="{StaticResource Emphasis}" Canvas.Left="11" Canvas.Top="514"/>
+        <TextBox x:Name="tbComment" Height="75" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="534" Width="594" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" UseLayoutRounding="False">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <mui:ModernButton x:Name="btnSave" Content="Save" IconData="F1 M 20,20L 50.25,20L 56,25.75L 56,56L 20,56L 20,20 Z M 52,27.25L 48.75,24L 48,24L 48,37L 28,37L 28,24L 24,24L 24,52L 52,52L 52,27.25 Z M 39,24L 39,34L 44,34L 44,24L 39,24 Z " IsEnabled="True" Canvas.Left="459" Canvas.Top="615" RenderTransformOrigin="-3.497,14" Click="btnSave_Click" />
+        <mui:ModernButton x:Name="btnOpenOutlook" Content="Outlook" IconData="F1 M 57,28.0001L 57.0002,44.9999L 55.0002,44.9999L 55.0002,30L 42.0002,29.9999L 42.0002,28L 57,28.0001 Z M 54,49.0002L 42.0001,49L 42,38.0001L 45.5032,40.7501L 53.9998,33.5004L 54,49.0002 Z M 54,31.0001L 53.9998,31.7503L 45.4998,38.7503L 42.0001,36L 42.0002,31L 54,31.0001 Z M 18.9998,23.5002L 40.9999,20.0001L 40.9999,56.0001L 18.9998,52.5002L 18.9998,23.5002 Z M 29.7823,44.5427C 31.1047,44.6242 32.6081,44.0316 33.4484,43.0072C 35.2038,40.8676 35.3479,37.1917 34.085,34.729C 33.491,33.5706 32.2772,32.5478 30.9911,32.3455C 29.9414,32.1803 28.7908,32.3617 27.8419,32.8397C 25.3245,34.1079 24.2313,38.1775 25.1295,40.8493C 25.7605,42.7263 27.8059,44.421 29.7823,44.5427 Z M 29.87,34.5962C 32.1888,34.5309 33.0384,39.4058 31.7104,41.3077C 31.5008,41.6079 31.216,41.8734 30.8877,42.0353C 30.5612,42.1963 30.1792,42.2576 29.8155,42.2423C 29.4521,42.2269 29.0805,42.1272 28.7653,41.9457C 28.4352,41.7557 28.1522,41.4733 27.9357,41.16C 26.6387,39.2837 27.5899,34.6605 29.87,34.5962 Z " IsEnabled="True" Canvas.Left="528" Canvas.Top="615" RenderTransformOrigin="-3.497,14" Click="btnOpenOutlook_Click" />
+
+
+
+    </Canvas>
+</UserControl>

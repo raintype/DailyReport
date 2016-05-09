@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="DailyReport.Pages.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="620">
+    <Canvas HorizontalAlignment="Left" Height="659" Margin="1,-5,0,-354" VerticalAlignment="Top" Width="616" Grid.RowSpan="2" Grid.ColumnSpan="2">
+        <TextBlock Text="설정 변경 " Style="{StaticResource Heading1}" RenderTransformOrigin="2.5,2.538" Canvas.Left="23" Canvas.Top="14" ></TextBlock>
+
+        <TextBlock Text="부서 이름" Style="{StaticResource Emphasis}" RenderTransformOrigin="2.5,2.538" Canvas.Left="23" Canvas.Top="76" ></TextBlock>
+        <TextBox x:Name="tbDeptName" Height="23" Canvas.Left="82" TextWrapping="Wrap" Text="TextBox" Canvas.Top="73" Width="231"/>
+
+        <TextBlock Text="유저 이름" Style="{StaticResource Emphasis}" RenderTransformOrigin="2.5,2.538" Canvas.Left="23" Canvas.Top="133" ></TextBlock>
+        <TextBox x:Name="tbUserName" Height="23" Canvas.Left="82" TextWrapping="Wrap" Text="TextBox" Canvas.Top="130" Width="231"/>
+
+        <TextBlock Text="메일 To" Style="{StaticResource Emphasis}" RenderTransformOrigin="2.5,2.538" Canvas.Left="23" Canvas.Top="188" ></TextBlock>
+        <TextBox x:Name="tbMailTo" Height="23" Canvas.Left="82" TextWrapping="Wrap" Text="TextBox" Canvas.Top="183" Width="487"/>
+
+        <TextBlock Text="메일 Cc" Style="{StaticResource Emphasis}" RenderTransformOrigin="2.5,2.538" Canvas.Left="23" Canvas.Top="241" ></TextBlock>
+        <TextBox x:Name="tbMailCc" Height="23" Canvas.Left="82" TextWrapping="Wrap" Text="TextBox" Canvas.Top="236" Width="487"/>
+
+        <TextBlock Text="자동 저장" Style="{StaticResource Emphasis}" RenderTransformOrigin="2.5,2.538" Canvas.Left="23" Canvas.Top="284" ></TextBlock>
+        <TextBox x:Name="tbAutoSaveMin" Height="23" Canvas.Left="82" TextWrapping="Wrap" Text="TextBox" Canvas.Top="281" Width="49" MaxLength="3"/>
+        <TextBlock Text="분 (미사용: 0)" Style="{StaticResource Emphasis}" RenderTransformOrigin="2.5,2.538" Canvas.Left="137" Canvas.Top="284" ></TextBlock>
+
+        <mui:ModernButton x:Name="btnSave" Content="Save" IconData="F1 M 20,20L 50.25,20L 56,25.75L 56,56L 20,56L 20,20 Z M 52,27.25L 48.75,24L 48,24L 48,37L 28,37L 28,24L 24,24L 24,52L 52,52L 52,27.25 Z M 39,24L 39,34L 44,34L 44,24L 39,24 Z " IsEnabled="True" Canvas.Left="521" Canvas.Top="331" RenderTransformOrigin="-3.497,14" Click="btnSave_Click" />
+    </Canvas>
+</UserControl>
